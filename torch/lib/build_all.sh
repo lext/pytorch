@@ -78,6 +78,8 @@ function build() {
               -DTHNN_SO_VERSION=1 \
               -DTHCUNN_SO_VERSION=1 \
               -DTHD_SO_VERSION=1 \
+              -DINTEL_MKL_DIR="$MKLROOT" \
+              -DCMAKE_LIBRARY_PATH="$MKLROOT/lib/intel64" \
               -DNO_CUDA=$((1-$WITH_CUDA)) \
               -DCMAKE_BUILD_TYPE=$([ $DEBUG ] && echo Debug || echo Release) \
               $2
